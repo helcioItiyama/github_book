@@ -24,7 +24,12 @@ export const Display = styled.div`
 
     > div {
       flex: 1;
+
       h3 {
+        max-width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: 14px;
       }
     }
@@ -63,38 +68,90 @@ export const Display = styled.div`
     color: #999999;
   }
 
-  @media(min-width: 430px) {
-    
+  @media (min-width: 430px) {
+    > div {
+      padding: 8px 10px;
+
+      > div {
+        h3 {
+          max-width: 220px;
+          font-size: 16px;
+        }
+      }
+
+      button {
+        > svg {
+          font-size: 20px;
+        }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+      }
+
+      a {
+        margin-left: 16px;
+        font-size: 16px;
+
+        svg {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 604px) {
+    > div {
+      padding: 8px 15px;
+
+      > div {
+        h3 {
+          font-size: 18px;
+        }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+      }
+
+      a {
+        margin-left: 30px;
+
+        svg {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 760px) {
+    > div {
+      padding: 8px 20px;
+
+      button {
+        > svg {
+          font-size: 25px;
+        }
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-right: 40px;
+      }
+
+      a {
+        margin-left: 40px;
+        font-size: 18px;
+      }
+    }
   }
 `;
 
-// > div {
-//   padding: 8px 20px;
-//   margin-bottom: 20px;
-
-//   button {
-//     svg {
-
-// }
-//   }
-
-//   img {
-//     width: 60px;
-//     height: 60px;
-//     margin-right: 40px;
-//   }
-
-//   > div {
-//     flex: 1;
-//     flex-direction: column;
-//     align-items: flex-start;
-//   }
-
-//   a {
-//     margin-left: 40px;
-
-//     svg {
-//       margin-left: 10px;
-//     }
-//   }
-// }
+export const Span = styled.span`
+  color: #999999;
+`;

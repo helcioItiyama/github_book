@@ -21,11 +21,6 @@ interface IRepos {
   svn_url: string;
 }
 
-interface IErrorMessage {
-  path: string;
-  message: string;
-}
-
 const Dashboard: React.FC = () => {
   const [search, setSearch] = useState('');
   const [type, setType] = useState('Escolha uma opção');
@@ -53,13 +48,18 @@ const Dashboard: React.FC = () => {
         if (!search) {
           setSearchError('Campo obrigatório');
         }
+
         if (type === 'dev') {
           const response = await api.get(`/search/users?q=${formattedSearch}`);
+
+          setRepos([]);
           setData(response.data.items);
         } else if (type === 'repo') {
           const response = await api.get(
             `/search/repositories?q=${formattedSearch}`,
           );
+
+          setData([]);
           setRepos(response.data.items);
         } else {
           setTypeError('Escolha uma opção');

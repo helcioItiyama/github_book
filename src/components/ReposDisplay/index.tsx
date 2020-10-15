@@ -62,7 +62,7 @@ const ReposDisplay: React.FC<IReposProps> = ({ repos }) => {
 
             <a href={repo.svn_url} rel="noopener noreferrer" target="_blank">
               Ver detalhes
-              <IoIosArrowDropright color="#000" size={20} />
+              <IoIosArrowDropright color="#000" />
             </a>
           </Repositories>
         ))
