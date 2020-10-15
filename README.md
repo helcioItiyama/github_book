@@ -1,6 +1,6 @@
-<p align="center">
-    Github Book
-</p>
+<h1 align="center">
+  Github Book
+</h1>
 
 
 ## :triangular_flag_on_post:Index
@@ -15,7 +15,7 @@
 A simple app to search users or repos from github and save your favorite ones.
 
 <p align="center">
-    <img alt ="homepage" src=""/>
+    <img alt ="homepage" src="https://github.com/helcioItiyama/github_book/blob/main/src/assets/github_book.gif"/>
 </p>
 
 ## :computer: TECHNOLOGIES USED FOR THIS PROJECT:
