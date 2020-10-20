@@ -32,8 +32,6 @@ A simple app to search users or repos from github and save your favorite ones.
 
 To clone and run this application, you'll need NodeJS and Yarn.
 
-First install the backend of this application following the instructions here:
-
 You just need to run the following commands:
 
 ```bash
