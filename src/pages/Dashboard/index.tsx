@@ -23,7 +23,9 @@ interface IRepos {
 
 const Dashboard: React.FC = () => {
   const [search, setSearch] = useState('');
-  const [type, setType] = useState('Escolha uma opção');
+  const [type, setType] = useState<'dev' | 'repo' | 'Escolha uma opção'>(
+    'Escolha uma opção',
+  );
   const [data, setData] = useState<IProfile[]>([]);
   const [repos, setRepos] = useState<IRepos[]>([]);
   const [searchError, setSearchError] = useState('');

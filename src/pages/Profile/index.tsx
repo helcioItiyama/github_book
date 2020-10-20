@@ -60,6 +60,13 @@ const Profile: React.FC = () => {
     loadData();
   }, [login]);
 
+  const isProfileNotSaved = useCallback(
+    id => {
+      return devs.every(dev => dev.id !== id);
+    },
+    [devs],
+  );
+
   const handleSaveDev = useCallback(() => {
     const saveData = {
       id: data.id,
@@ -68,17 +75,10 @@ const Profile: React.FC = () => {
       url: data.url,
     };
 
-    if (devs.every(dev => dev.id !== saveData.id)) {
+    if (isProfileNotSaved(saveData.id)) {
       dispatch(saveDev(saveData));
     }
-  }, [dispatch, data, devs]);
-
-  const saved = useCallback(
-    id => {
-      return devs.every(dev => dev.id !== id);
-    },
-    [devs],
-  );
+  }, [dispatch, isProfileNotSaved, data]);
 
   return (
     <>
@@ -108,7 +108,7 @@ const Profile: React.FC = () => {
                   <span>Seguindo</span>
                 </li>
 
-                {saved(data.id) && (
+                {isProfileNotSaved(data.id) && (
                   <li>
                     <button onClick={handleSaveDev} type="button">
                       <strong>
